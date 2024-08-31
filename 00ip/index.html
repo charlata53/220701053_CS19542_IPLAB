@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <div class="navbar">
+    <div class="leftbar">
+      <a href="#"></a>
+    </div>
+
+    <div class="center">
+      <a href="#">About</a>
+      <a href="#">Home</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+    </div>
+
+    <div class="left">
+      <a href="#">Call: 9999999999</a>
+    </div>
+
+    <div class="content">
+      <iframe src="https://en.wikipedia.org/wiki/Nutrition" title="Wikipedia Nutrition Page" width="100%" height="500px" style="border: none;"></iframe>
+    </div>
+
+    <ul>
+      <li><a href="https://en.wikipedia.org/wiki/Nutrition" target="_blank">What is Nutrition?</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Nutrient" target="_blank">Different Types of Nutrients</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Diet_(nutrition)" target="_blank">Role of Diet in Nutrition</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Healthy_diet" target="_blank">Healthy Diet Tips</a></li>
+    </ul>
+
+      <!-- BMI Calculator -->
+      <h2>BMI Calculator</h2>
+      <form id="bmi-form">
+          <label for="height">Height (in meters):</label><br>
+          <input type="number" id="height" name="height" step="0.01" required><br><br>
+          
+          <label for="weight">Weight (in kilograms):</label><br>
+          <input type="number" id="weight" name="weight" required><br><br>
+          
+          <button type="button" onclick="calculateBMI()">Calculate BMI</button>
+      </form>
+      
+      <p id="bmi-result"></p>
+  
+      <script>
+          // Change background color based on color input
+          document.getElementById('bg-color').addEventListener('input', function() {
+              document.body.style.backgroundColor = this.value;
+          });
+  
+          // BMI Calculation
+          function calculateBMI() {
+              const height = parseFloat(document.getElementById('height').value);
+              const weight = parseFloat(document.getElementById('weight').value);
+  
+              if (height > 0 && weight > 0) {
+                  const bmi = weight / (height * height);
+                  document.getElementById('bmi-result').textContent = 'Your BMI is ' + bmi.toFixed(2);
+              } else {
+                  document.getElementById('bmi-result').textContent = 'Please enter valid height and weight.';
+              }
+          }
+      </script>
+    
+
+  </div>
+  
+</body>
+</html>
